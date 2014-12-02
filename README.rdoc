@@ -1,5 +1,7 @@
 == README
 
+[ ![Codeship Status for kennytrionfo/MoviesApp](https://codeship.com/projects/09ba0840-5c8f-0132-e886-1a777663c9d2/status)](https://codeship.com/projects/50892)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

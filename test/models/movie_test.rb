@@ -10,4 +10,8 @@ class MovieTest < ActiveSupport::TestCase
     assert movie.valid?
   end
 
+  test "that test is valid" do 
+  	assert true 
+  end
+
 end

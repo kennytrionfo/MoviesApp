@@ -14,4 +14,9 @@ class MovieTest < ActiveSupport::TestCase
   	assert true 
   end
 
+  test "requires a title to be valid" do
+  	movie = Movie.new
+  	assert !movie.valid?
+  end
+
 end

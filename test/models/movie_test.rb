@@ -19,4 +19,12 @@ class MovieTest < ActiveSupport::TestCase
   	assert !movie.valid?
   end
 
+  test "requires a title using refute" do 
+  	movie = Movie.new
+  	refute movie.valid?
+  end
+
+
+
+
 end

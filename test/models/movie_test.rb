@@ -7,7 +7,7 @@ class MovieTest < ActiveSupport::TestCase
   end
 
   def test_valid
-    assert movie.valid?
+    assert movie, "The movie isn't valid for some reason Kdog"
   end
 
   test "that test is valid" do 

@@ -1,12 +1,12 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  date: MyString
-  place: MyString
+kenny_is_king:
+  title: "Kenny is King"
+  date: "all week"
+  place: "the world"
 
-two:
-  title: MyString
-  date: MyString
-  place: MyString
+return_of_kenny:
+  title: "The return of kenny"
+  date: "In the future"
+  place: "In your dreams"

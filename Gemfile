@@ -31,6 +31,11 @@ group :test, :development do
 end
 
 gem 'minitest-reporters'
+
+gem 'minitest-focus'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

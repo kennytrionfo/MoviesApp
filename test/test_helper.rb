@@ -7,8 +7,9 @@ require "minitest/reporters"
 Minitest::Reporters.use! [ Minitest::Reporters::SpecReporter.new ]
 # This will give you the longlines with times format: 
 # Minitest::Reporters.use!
+# The gem for this must be in gemfile to work. 
 
-
+#This allows you to put the word "focus" before a test to have only that test tested. The gem must be in the gemfile for this to work. 
 require "minitest/focus"
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:

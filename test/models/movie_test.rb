@@ -32,8 +32,8 @@ class MovieTest < ActiveSupport::TestCase
   	refute movie.valid?
   end
 
-#---------------- Create in CRUD -------------Kenny Trionfo---12/3/2014--------
-  test "should create a new article" do 
+#---------------- The Create in CRUD -------------Kenny Trionfo---12/3/2014--------
+  test "create a new article" do 
   	#Arrange:
   	newey = Movie.new
   	newey.title = "Funky White Boy"
@@ -45,15 +45,37 @@ class MovieTest < ActiveSupport::TestCase
   	assert newey.save
   end
 
-#-------- The Update ability in CRUD --------Kenny Trionfo---12/3/2014--------
-  test "should update movie" do 
-  	#Arrange 
-  	movie = Movie.new
-  	movie.title = "cool title"
-  	#Act 
+#---------------- The Read in CRUD -------------Kenny Trionfo---12/5/2014--------
+  test "find a movie" do 
+    #Arrange 
+    #in below: movies is the name of the .yml file that the fixture titled 'return_of_kenny resides'
+    movie_id = movies(:return_of_kenny).id
+    #Act 
 
-  	#Assert
-  	assert movie.update_attributes(:title => "new title")
+    #Assert
+    #
+    assert_nothing_raised { Movie.find(movie_id) }
+    end
+
+#-------- The Update in CRUD --------Kenny Trionfo---12/3/2014--------
+  test "update movie" do 
+    #Arrange 
+    movie = Movie.new
+    movie.title = "cool title"
+    #Act 
+
+    #Assert
+    assert movie.update_attributes(:title => "new title")
+  end
+
+#-------- The Destroy in CRUD -------------Kenny Trionfo---12/5/2014--------
+  test "destroy movie" do 
+    #Arrange 
+    movie = movies(:return_of_kenny)
+    #Act 
+    movie.destroy
+    #Assert    
+    assert_raise(ActiveRecord::RecordNotFound) {Movie.find(movie.id)}
   end
 
 end

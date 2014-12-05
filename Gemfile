@@ -33,7 +33,7 @@ end
 gem 'minitest-reporters'
 
 gem 'minitest-focus'
-
+# The above two must be required in ur test_helper.rb file. 
 
 
 # Use ActiveModel has_secure_password

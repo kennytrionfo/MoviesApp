@@ -21,7 +21,7 @@ class MovieTest < ActiveSupport::TestCase
 
   test "same as above" do 
   	#Arrange:
-  	bambi = Movie.new title: "Crazy Title"
+  	bambi = Movie.new title: "Crazy Title", date: "now", place: "here"  
   	#Act:
   	#Assert:
   	assert bambi.valid?
@@ -62,6 +62,8 @@ class MovieTest < ActiveSupport::TestCase
     #Arrange 
     movie = Movie.new
     movie.title = "cool title"
+    movie.date = "now"
+    movie.place = "here"
     #Act 
 
     #Assert
@@ -77,6 +79,30 @@ class MovieTest < ActiveSupport::TestCase
     #Assert    
     assert_raise(ActiveRecord::RecordNotFound) {Movie.find(movie.id)}
   end
+
+#---------------- Validations -------------Kenny Trionfo---12/5/2014--------
+  test "should not be valid without title" do 
+    movie = Movie.new
+    assert !movie.valid?
+    assert movie.errors[:title].any?
+    assert_equal ["can't be blank"], movie.errors[:title] , "not invalid without a title"
+  end
+
+    test "should not be valid without date" do 
+    movie = Movie.new
+    assert !movie.valid?
+    assert movie.errors[:date].any?
+    assert_equal ["can't be blank"], movie.errors[:date]
+  end
+
+    test "should not be valid without place" do 
+    movie = Movie.new
+    assert !movie.valid?
+    assert movie.errors[:place].any?
+    assert_equal ["can't be blank"], movie.errors[:place]  
+  end
+
+  
 
 end
 

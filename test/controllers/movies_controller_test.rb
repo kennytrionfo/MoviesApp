@@ -3,7 +3,7 @@ require "test_helper"
 class MoviesControllerTest < ActionController::TestCase
 
   def movie
-    @movie ||= movies :one
+    @movie ||= movies :kenny_is_king
   end
 
   def test_index

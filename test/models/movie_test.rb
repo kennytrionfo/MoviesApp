@@ -33,7 +33,7 @@ class MovieTest < ActiveSupport::TestCase
   end
 
 #---------------- The Create in CRUD -------------Kenny Trionfo---12/3/2014--------
-  test "create a new article" do 
+  test "create a new movie" do 
   	#Arrange:
   	newey = Movie.new
   	newey.title = "Funky White Boy"
@@ -103,7 +103,6 @@ class MovieTest < ActiveSupport::TestCase
   end
 
   
-
 end
 
 

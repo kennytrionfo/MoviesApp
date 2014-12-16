@@ -30,10 +30,24 @@ group :test, :development do
   gem 'minitest-rails'
 end
 
-gem 'minitest-reporters'
 
-gem 'minitest-focus'
+gem 'minitest-focus' #allows you to focus on just one test by putting 'focus' before test
+gem 'minitest-reporters'  #give you prettier output 
 # The above two must be required in ur test_helper.rb file. 
+
+# Better Errors Gem:
+group :development, :test do
+	gem 'binding_of_caller', '~> 0.7.2'
+	gem 'better_errors', '~> 2.0.0'
+end
+# Must also add this to config/development.rb file: 
+#  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
+# this is to allow better_errors gem to run in a virtual env with a virtual box and/or vagrant
+
+# Them must run rails like this: 
+# TRUSTED_IP=10.0.2.2 rails s
+# Tip: You can find your apparent IP by hitting the old error page's "Show env dump" and looking at "REMOTE_ADDR".
+
 
 
 # Use ActiveModel has_secure_password
